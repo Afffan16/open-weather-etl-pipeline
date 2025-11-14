@@ -1,25 +1,6 @@
-```markdown
 # Weather Data Pipeline with Apache Airflow on AWS EC2
 
 A fully automated **ETL pipeline** that fetches real-time weather data for **Portland, OR** from **OpenWeatherMap**, transforms temperature units, and loads the data into **PostgreSQL** and **Amazon S3** using **Apache Airflow** orchestrated via **Docker Compose** on an **AWS EC2 instance**.
-
----
-
-## Project Architecture
-
-```mermaid
-graph TD
-    A[OpenWeatherMap API] -->|Fetch Weather| B(Airflow DAG)
-    B --> C[Extract: HTTP Request]
-    C --> D[Transform: Kelvin → Fahrenheit]
-    D --> E[Load: PostgreSQL]
-    D --> F[Load: S3 Bucket]
-    G[EC2 Instance] --> H[Docker Compose]
-    H --> I[Airflow Webserver]
-    H --> J[PostgreSQL]
-    H --> K[pgAdmin]
-    L[S3 Bucket] --> M[CSV Files]
-```
 
 ---
 
